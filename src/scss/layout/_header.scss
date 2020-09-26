@@ -1,9 +1,9 @@
 header {
 	height: 155px;
 	background-color: $primaryClr;
-	background-image: url('./../../assets/images/bg-header-desktop.svg');
+	background-image: url('./assets/images/bg-header-desktop.svg');
 
 	@include breakpoint-max(600) {
-		background-image: url('./../../assets/images/bg-header-mobile.svg');
+		background-image: url('./assets/images/bg-header-mobile.svg');
 	}
 }
