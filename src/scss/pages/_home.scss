@@ -6,7 +6,8 @@ main {
 .inner-content {
 	@include wrapper(1150, 20);
 
-	& > div {
+	.box,
+	.filter {
 		box-shadow: 0px 7px 15px 5px rgba($primaryClr, 0.3);
 		border-radius: 6px;
 		padding: 20px 40px;
@@ -128,6 +129,19 @@ main {
 		border-left: 5px solid $primaryClr;
 	}
 
+	&.hideFilterEL {
+		overflow: hidden;
+		position: absolute;
+		height: 0px;
+		transform: translateY(-300vh);
+	}
+
+	&.showFilterEL {
+		height: inherit;
+		position: relative;
+		transform: translateY(0);
+	}
+
 	&__content {
 		min-width: 300px;
 
@@ -204,16 +218,16 @@ main {
 
 		&:hover {
 			background-color: lighten($primaryClr, 5%);
-			&::after {
-				opacity: 0.22;
-			}
 		}
 
 		&:active {
 			background-color: darken($primaryClr, 5%);
-			&::after {
-				opacity: 0.32;
-			}
+		}
+
+		&.active {
+			pointer-events: none;
+			background-color: darken($primaryClr, 5%);
+			color: #fff;
 		}
 	}
 }
